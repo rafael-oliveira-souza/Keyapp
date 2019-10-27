@@ -1,0 +1,59 @@
+<ion-header>
+  <!-- <ion-title>Title</ion-title> -->
+  <app-header [back] [title]></app-header>
+</ion-header>
+
+<ion-content>
+  <ion-grid>
+    <ion-row class="mt-5 mb-5">
+      <ion-col size="5"></ion-col>
+      <ion-col size="2">
+        <ion-img src="../../assets/icon/fechadura.svg"></ion-img>
+      </ion-col>
+      <ion-col size="5"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col size="3">
+        <ion-card routerLink="/chaves">
+          <ion-card-header>
+            <ion-card-subtitle class="text-center mb-2">Minhas Chaves</ion-card-subtitle>
+            <ion-img class="col-6 ml-c" src="../../assets/icon/chave.svg"></ion-img>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="3">
+        <ion-card routerLink="/chaves">
+          <ion-card-header>
+            <ion-card-subtitle class="text-center mb-2">Gerenciar</ion-card-subtitle>
+            <div class="col-2"></div>
+            <ion-img class="col-6 ml-c" src="../../assets/icon/gerenc.svg"></ion-img>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col size="3"></ion-col>
+      <ion-col size="3">
+        <ion-card routerLink="/chaves">
+          <ion-card-header>
+            <ion-card-subtitle class="text-center mb-2">Estatísticas</ion-card-subtitle>
+            <div class="col-2"></div>
+            <ion-img class="col-6 ml-c" src="../../assets/icon/grafico.svg"></ion-img>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="3">
+        <ion-card routerLink="/chaves">
+          <ion-card-header>
+            <ion-card-subtitle class="text-center mb-2">Configurar</ion-card-subtitle>
+            <div class="col-2"></div>
+            <ion-img class="col-6 ml-c" src="../../assets/icon/config.svg"></ion-img>
+          </ion-card-header>
+        </ion-card>
+      </ion-col>
+      <ion-col size="3"></ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

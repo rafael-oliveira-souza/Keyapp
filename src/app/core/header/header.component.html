@@ -1,0 +1,12 @@
+<ion-header class="d-flex justify-content-between">
+  <div class="col-2">
+    <ion-icon *ngIf="back" name="md-arrow-back" (click)="goBack()" color="light"></ion-icon>
+  </div>
+  <div class="col-4">
+    <!-- <ion-icon color="danger" name="heart"></ion-icon> -->
+    <b class="text-white">{{title}}</b>
+  </div>
+  <button class="col-1 transparent" (click)="toggleMenu()">
+    <ion-icon name="menu" color="light"></ion-icon>
+  </button>
+</ion-header>
