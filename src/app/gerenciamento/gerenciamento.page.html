@@ -1,0 +1,13 @@
+<ion-header>
+  <app-header [back]="true" [title]="'Gerenciamento'"></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="row justify-content-center">
+    <ion-list class="col-8 mt-5 mb-5">
+      <ion-item *ngFor="let item of fechaduras" (click)="abrirDetalhe(item)">
+        {{item.titulo}}
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

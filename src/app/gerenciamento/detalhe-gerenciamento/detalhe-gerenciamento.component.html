@@ -1,0 +1,19 @@
+<ion-header>
+  <app-header [back]="true" [title]="chave.titulo"></app-header>
+</ion-header>
+
+<ion-content>
+  <div class="row justify-content-center">
+    <ion-list class="col-8 mt-5 mb-5">
+      <ion-item (click)="editarNome()">
+        Editar nome
+      </ion-item>
+      <ion-item (click)="editarUsuario()">
+        Editar Usuários
+      </ion-item>
+      <ion-item (click)="remover()">
+        Remover
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>

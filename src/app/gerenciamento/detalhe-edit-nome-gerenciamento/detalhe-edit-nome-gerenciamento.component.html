@@ -1,0 +1,20 @@
+<ion-content>
+    <div class="container">
+      <div class="row justify-content-center mt-3 mb-4">
+        <ion-item class="col-7 mt-4">
+          <ion-label position="floating">Nome</ion-label>
+          <ion-input [(ngModel)]="chave.titulo"></ion-input>
+        </ion-item>
+      </div>
+      <div class="row justify-content-center mt-5" (click)="fechar()">
+        <ion-button color="success">
+          <ion-icon name="md-add-circle" slot="start"></ion-icon>
+          Salvar
+        </ion-button>
+        <ion-button color="danger" (click)="fechar()">
+          <ion-icon name="md-remove-circle" slot="start"></ion-icon>
+          Cancelar
+        </ion-button>
+      </div>
+    </div>
+  </ion-content>
