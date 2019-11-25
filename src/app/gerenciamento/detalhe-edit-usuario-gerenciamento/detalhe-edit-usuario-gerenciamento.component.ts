@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ModalController, NavParams } from '@ionic/angular';
 
 @Component({
   selector: 'app-detalhe-edit-usuario-gerenciamento',
@@ -6,9 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./detalhe-edit-usuario-gerenciamento.component.scss'],
 })
 export class DetalheEditUsuarioGerenciamentoComponent implements OnInit {
+  @Input() chave: string;
 
-  constructor() { }
+  constructor(private modalController: ModalController, navParams: NavParams) {
+    this.chave = navParams.get('chave');
+  }
 
-  ngOnInit() {}
+  ngOnInit() {
+  }
 
+  fechar() {
+    console.log(this.chave)
+    this.modalController.dismiss();
+  }
 }

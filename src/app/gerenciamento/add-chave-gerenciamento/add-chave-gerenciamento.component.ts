@@ -12,6 +12,7 @@ export class AddChaveGerenciamentoComponent implements OnInit {
 
   ngOnInit() {
     debugger;
-    console.log('2',this.router.getCurrentNavigation());}
+    console.log('2',this.router.getCurrentNavigation());
+  }
 
 }

@@ -13,8 +13,13 @@ const routes: Routes = [
   },
   { path: 'chaves', 
     loadChildren: () => import('./chaves/chaves.module').then(m => m.ChavesPageModule)
-  }
-  // loadChildren: './chaves/chaves.module#ChavesPageModule' }
+  },
+  { path: 'estatistica', 
+    loadChildren: () => import('./estatistica/estatistica.module').then(m => m.EstatisticaPageModule)
+  },
+  { path: 'gerenciamento', 
+    loadChildren: () => import('./gerenciamento/gerenciamento.module').then(m => m.GerenciamentoPageModule)
+  },
 ];
 
 @NgModule({
