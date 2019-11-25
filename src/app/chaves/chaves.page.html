@@ -6,21 +6,11 @@
   <div class="container">
     <div class="row justify-content-center">
       <ion-list class="col-8 mt-5 mb-5">
-        <ion-item *ngFor="let item of items" class="cor-tema mt-2" (click)="presentModal(item.titulo)">
+        <ion-item *ngFor="let item of items" class="cor-tema mt-2" (click)="presentModal(item)">
           <ion-icon [name]="item.icone" slot="start" class="cor-tema"></ion-icon>
           {{item.titulo}}
         </ion-item>
       </ion-list>
-    </div>
-    <div class="row justify-content-center mt-5">
-      <ion-button color="success">
-        <ion-icon name="md-add-circle" slot="start"></ion-icon>
-        Adicionar Chave
-      </ion-button>
-      <ion-button color="danger">
-        <ion-icon name="md-remove-circle" slot="start"></ion-icon>
-        Excluir Chave
-      </ion-button>
     </div>
   </div>
 </ion-content>

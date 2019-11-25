@@ -1,2 +1,18 @@
-<ion-content>
+<ion-header>
+    <app-header [hideMenu]="true" [back]="false" [close]="true" [title]="nome"></app-header>
+</ion-header>
+
+<ion-content class="mt-5">
+    <ion-row class="mt-5 mb-5">
+      <ion-col size="5"></ion-col>
+      <ion-col size="2">
+        <ion-img src="../../assets/icon/fechadura.svg"></ion-img>
+      </ion-col>
+      <ion-col size="5"></ion-col>
+    </ion-row>
+    <div class="row justify-content-center mt-5">
+        <ion-button color="success" (click)="presentAlert()">
+            Abrir Fechadura
+        </ion-button>
+    </div>
 </ion-content>

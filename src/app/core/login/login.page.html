@@ -1,0 +1,33 @@
+<ion-header>
+  <app-header [hideMenu]="true" [back]="false" [close]="false" [title]="'Login'"></app-header>
+</ion-header>
+
+<ion-content class="mt-5">
+  <ion-row class="mt-5 mb-5">
+    <ion-col size="5"></ion-col>
+    <ion-col size="2">
+      <ion-img src="../../assets/icon/user.svg"></ion-img>
+    </ion-col>
+    <ion-col size="5"></ion-col>
+  </ion-row>
+  <div class="row justify-content-center">
+    <ion-item class="col-7 mt-4">
+      <ion-label>Usuario: </ion-label>
+      <ion-input [(ngModel)]="account.usuario"></ion-input>
+    </ion-item>
+    <ion-item class="col-7 mt-4">
+      <ion-label>Senha: </ion-label>
+      <ion-input [type]="getType()" [(ngModel)]="account.senha"></ion-input>
+      <ion-icon class="selected" name="eye" item-right (click)="toggleTextPassword()"></ion-icon>
+    </ion-item>
+  </div>
+  <div class="row justify-content-center mt-5">
+    <small class="col-12 text-center red" *ngIf="ativ">{{loginErrorString}}</small>
+    <ion-button color="primary" (click)="logar()">
+      Log-in
+    </ion-button>
+    <ion-button color="primary" (click)="cadastrar()">
+      Cadastre-se
+    </ion-button>
+  </div>
+</ion-content>

@@ -3,6 +3,7 @@ import { Mock } from '../shared/mock';
 import { ModalController } from '@ionic/angular';
 import { DetalheChaveComponent } from './detalhe-chave/detalhe-chave.component';
 import { KeyService } from '../services/key.service';
+import { Chave } from '../shared/model';
 
 @Component({
   selector: 'app-chaves',
@@ -10,23 +11,19 @@ import { KeyService } from '../services/key.service';
   styleUrls: ['./chaves.page.scss'],
 })
 export class ChavesPage implements OnInit {
-  public items: Array<any> = Mock.chaves;
+  public items: Array<any>;
 
   constructor(public modalController: ModalController, private db: KeyService) {}
 
   ngOnInit() {
     // icon: this.icons[Math.floor(Math.random() * this.icons.length)]
-    console.log('Usuario : ',this.db.getLista('usuario'));
-    console.log('Profissional', this.db.getLista('profissional'));
+    this.items = this.db.getLista('chave');
   }
   
-  async presentModal(titulo: string) {
+  async presentModal(chave: Chave) {
     const modal = await this.modalController.create({
       component: DetalheChaveComponent,
-      componentProps: {
-        'nomeChave': titulo,
-        'codigoChave': '160053'
-      }
+      componentProps: {chave}
     });
     return await modal.present();
   }

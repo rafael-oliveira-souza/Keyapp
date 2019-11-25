@@ -16,6 +16,11 @@ export class AppComponent {
       url: '/home',
       icon: 'home'
     },
+    {
+      title: 'Sair',
+      url: '/login',
+      icon: 'md-log-out'
+    },
   ];
 
   constructor(

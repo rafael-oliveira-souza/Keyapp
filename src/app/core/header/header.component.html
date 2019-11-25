@@ -6,7 +6,10 @@
     <!-- <ion-icon color="danger" name="heart"></ion-icon> -->
     <b class="text-white">{{title}}</b>
   </div>
-  <button class="col-1 transparent" (click)="toggleMenu()">
-    <ion-icon name="menu" color="light"></ion-icon>
-  </button>
+  <div>
+    <button *ngIf="!hideMenu" class="col-1 transparent" (click)="toggleMenu()">
+      <ion-icon name="menu" color="light"></ion-icon>
+    </button>
+    <ion-icon *ngIf="close" name="md-close" (click)="onClose()" color="light"></ion-icon>
+  </div>
 </ion-header>

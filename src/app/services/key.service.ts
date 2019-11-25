@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
 import { AngularFireDatabase, AngularFireList, ChildEvent } from 'angularfire2/database';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @Injectable()
 export class KeyService {
   bdList: AngularFireList<any>;
 
-  constructor(private firebase: AngularFireDatabase) { }
+  constructor(private firebase: AngularFireDatabase, private authorization: AngularFireAuth) { }
 
   // getAll() {
   //   // Buscando todos os itens no no "/task"
@@ -51,5 +52,17 @@ export class KeyService {
   deletar(model, key: string) {
     this.bdList = this.firebase.list(model);
     this.bdList.remove(key);
+  }
+
+  doLogin(account) {
+    if (account.usuario && account.senha) {
+      return this.authorization.auth
+        .signInWithEmailAndPassword(account.usuario, account.senha)
+        .then((resp) => {
+        }).catch(error => {
+        });
+    } else {
+      return null;
+    };
   }
 }

@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { KeyService } from '../services/key.service';
+import { ModalController } from '@ionic/angular';
+import { Estatistica, Usuario } from '../shared/model';
 
 @Component({
   selector: 'app-estatistica',
@@ -6,24 +9,29 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./estatistica.page.scss'],
 })
 export class EstatisticaPage implements OnInit {
-  public data:Date = new Date();
-  public dataHora:string;
-  public usuario:string;
-  public mensagem:string;
-  public usuario2:string;
-  public mensagem2:string;
+  public estatisticas: Array<Estatistica> = [];
+  public perfis: Array<Usuario> = [];
+  public carregado: boolean = false;
 
-  constructor() { }
+  constructor(private modalController: ModalController,
+    private db: KeyService) { }
 
   ngOnInit() {
-    this.dataHora = this.data.toLocaleString();
-    this.usuario = "Marcos usou a";
-    this.mensagem = "chave principal";
-    this.usuario2 = "Yan Luís usou a";
-    this.mensagem2 = "chave da casa";
-  
-  
+    this.estatisticas = this.db.getLista('estatistica');
+    this.perfis = this.db.getLista('perfil-key');
+    this.carregado = true;
+  }
 
+  carregarUsuario(id: number) {
+    let retorno: any = id;
+debugger
+    this.perfis.forEach(user => {
+      if (user.id === id) {
+        retorno = user.nome;
+      }
+    })
+
+    return retorno;
   }
 
 }

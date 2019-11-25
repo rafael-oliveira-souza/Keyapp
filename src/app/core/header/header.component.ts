@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { MenuController, NavController } from '@ionic/angular';
+import { MenuController, NavController, ModalController } from '@ionic/angular';
 
 @Component({
   selector: 'app-header',
@@ -8,9 +8,11 @@ import { MenuController, NavController } from '@ionic/angular';
 })
 export class HeaderComponent implements OnInit {
   @Input('back') back: boolean;
+  @Input('close') close: boolean;
+  @Input('hideMenu') hideMenu: boolean;
   @Input('title') title: string;
   
-  constructor(private _menu: MenuController, private _nav: NavController) { }
+  constructor(private _menu: MenuController, private _nav: NavController, private modalController: ModalController) { }
 
   ngOnInit() {
     if(!this.title){
@@ -24,5 +26,9 @@ export class HeaderComponent implements OnInit {
 
   goBack(){
     this._nav.back();
+  }
+
+  onClose(){
+    this.modalController.dismiss();
   }
 }

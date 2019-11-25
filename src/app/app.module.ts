@@ -12,6 +12,7 @@ import { AngularFireModule } from 'angularfire2';
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { environment } from '../environments/environment';
 import { KeyService } from './services/key.service';
+import { AngularFireAuth } from 'angularfire2/auth';
 
 @NgModule({
   declarations: [AppComponent],
@@ -27,6 +28,7 @@ import { KeyService } from './services/key.service';
     StatusBar,
     SplashScreen,
     KeyService,
+    AngularFireModule, AngularFireAuth,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy }
   ],
   bootstrap: [AppComponent]
